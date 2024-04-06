@@ -27,7 +27,7 @@ jobs:
           NDATE: ${{ steps.date.outputs.date }}
         run: |
           # NDATE=$(date +%Y%m%d)
-          sudo sed -i "s_repo.jellyfin.org/releases_testingcf.jsdelivr.net/gh/LxnChan/jellyfin-plugin-mirror@${NDATE}_" "$GITHUB_WORKSPACE/plugin/manifest-stable.json"
+          sudo sed -i "s_repo.jellyfin.org/releases_testingcf.jsdelivr.net/gh/LxnChan/jellyfin-plugin-mirror@$latest_" "$GITHUB_WORKSPACE/plugin/manifest-stable.json"
           sudo sed -i "s_https://github.com_https://gh-proxy.arlxn.top/https://github.com_" "$GITHUB_WORKSPACE/plugin/manifest-stable.json"
           sudo sed -i "s_https://raw.githubusercontent.com_https://gh-proxy.arlxn.top/https://raw.githubusercontent.com_" "$GITHUB_WORKSPACE/plugin/manifest-stable.json"
           sudo cp "$GITHUB_WORKSPACE/plugin/manifest-stable.json" "$GITHUB_WORKSPACE/manifest-stable-jsd.json"
